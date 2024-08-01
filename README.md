@@ -95,7 +95,11 @@ looking like this:
 ### Verify `jeat` is working via `jpm test`
 
 Try out `jeat` tests via `jpm test` -- though if there aren't any
-`jeat` tests yet the output might not be so interesting :)
+`jeat` tests yet, the output might not be so interesting :)
+
+See the [test writing tips
+document](https://github.com/sogaiu/janet-ex-as-tests/blob/master/doc_test-writing-tips.md)
+at the `jeat` repository for details on writing tests.
 
 ### Commit
 
