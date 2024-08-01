@@ -6,7 +6,7 @@
 
   (setdyn :jeat-repo
           (os/getenv "JEAT_REPO"
-                     "https://github.com/sogaiu/janet-expr-as-tests"))
+                     "https://github.com/sogaiu/janet-ex-as-tests"))
 
   (setdyn :jeat-conf-name
           (os/getenv "JEAT_CONF_NAME"
