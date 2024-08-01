@@ -1,0 +1,5 @@
+(import jtz/main)
+
+(defn main
+  [& argv]
+  (main/main ;argv))
