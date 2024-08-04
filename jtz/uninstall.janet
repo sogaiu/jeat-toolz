@@ -7,6 +7,12 @@
 
 (defn main
   [& argv]
+  (def force
+    (when (> (length argv) 1)
+      (when-let [argv-1 (get argv 1)]
+        (or (= "-f" argv-1)
+            (= "--force" argv-1)))))
+
   (def {:logf logf
         :dump-log dump-log
         :exit-with-logf exit-with-logf}
@@ -32,15 +38,16 @@
     (exit-with-logf "%s is not a file, aborting" jeat-runner-dest-path))
   (logf "Verified %s exists." jeat-runner-dest-path)
   #
-  (print "WARNING: this will attempt to remove a file and a directory.")
-  (print "Specifically:")
-  (printf "* %s" jeat-runner-dest-path)
-  (printf "* %s" jeat-dir-name)
-  (print "Please check for uncommitted / untracked work before continuing.")
-  (def response (getline "Proceed? [y/N] "))
-  (when (not (string/has-prefix? "y" (string/ascii-lower response)))
-    (print "Ok, bye!")
-    (os/exit 1))
+  (when (not force)
+    (print "WARNING: this will attempt to remove a file and a directory.")
+    (print "Specifically:")
+    (printf "* %s" jeat-runner-dest-path)
+    (printf "* %s" jeat-dir-name)
+    (print "Please check for uncommitted / untracked work before continuing.")
+    (def response (getline "Proceed? [y/N] "))
+    (when (not (string/has-prefix? "y" (string/ascii-lower response)))
+      (print "Ok, bye!")
+      (os/exit 1)))
   #
   (os/rm jeat-runner-dest-path)
   (when (os/stat jeat-runner-dest-path)
