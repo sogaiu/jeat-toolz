@@ -1,5 +1,6 @@
 (import ./argv :as av)
 (import ./install :as inst)
+(import ./update :as upd)
 (import ./uninstall :as uninst)
 
 (def usage
@@ -11,11 +12,16 @@
     -h, --help                   show this output
 
     -i, --install                install jeat
+    -p, --update                 update jeat
     -u, --uninstall              uninstall jeat
 
   Invoked from the root directory of a Janet project,
   with the `-i` or `--install` option, install `jeat`
   into the project.
+
+  Invoked from the root directory of a Janet project,
+  with the `-p` or `--update option, update `jeat`
+  in the project.
 
   Invoked from the root directory of a Janet project,
   with the `-u` or `--uninstall` option, uninstall `jeat`
@@ -49,6 +55,10 @@
 
   (when (opts :install)
     (inst/main @[])
+    (os/exit 0))
+
+  (when (opts :update)
+    (upd/main @[])
     (os/exit 0))
 
   (when (opts :uninstall)

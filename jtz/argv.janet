@@ -1,6 +1,7 @@
 (def arg-data
   {"--install" "-i"
    "--help" "-h"
+   "--update" "-p"
    "--uninstall" "-u"})
 
 (def shorts-table
