@@ -15,16 +15,16 @@
     -p, --update                 update jeat
     -u, --uninstall              uninstall jeat
 
-  Invoked from the root directory of a Janet project,
-  with the `-i` or `--install` option, install `jeat`
+  `jtz` should be invoked from the root directory of
+  a Janet project.
+
+  With the `-i` or `--install` option, install `jeat`
   into the project.
 
-  Invoked from the root directory of a Janet project,
-  with the `-p` or `--update option, update `jeat`
+  With the `-p` or `--update` option, update `jeat`
   in the project.
 
-  Invoked from the root directory of a Janet project,
-  with the `-u` or `--uninstall` option, uninstall `jeat`
+  With the `-u` or `--uninstall` option, uninstall `jeat`
   from the project.
 
   ---
