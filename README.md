@@ -1,8 +1,8 @@
 # jeat-toolz (jtz)
 
 Tools for installing and managing
-[jeat](https://github.com/sogaiu/janet-ex-as-tests) aka
-`janet-ex-as-tests`.
+[janet-ex-as-tests](https://github.com/sogaiu/janet-ex-as-tests) aka
+`jeat`.
 
 ## Installation of `jeat-toolz` (`jtz`)
 
