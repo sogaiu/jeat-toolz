@@ -14,7 +14,7 @@
   #
   (when (not (u/is-dir? ".git"))
     (exit-with-logf "needs to be run in a git repository root dir"))
-  (logf "Verified %s is a git repository root." (os/cwd))
+  (logf "Verified git repository root at: %s." (os/cwd))
   #
   (def {:jeat-dir-name jeat-dir-name
         :jeat-runner-dest-path jeat-runner-dest-path}

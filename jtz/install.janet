@@ -17,7 +17,7 @@
   #
   (when (not (u/is-dir? ".git"))
     (exit-with-logf "needs to be run in a git repository root dir"))
-  (logf "Verified %s is a git repository root." (os/cwd))
+  (logf "Verified git repository root at: %s." (os/cwd))
   # XXX: possibly nicer to check whether something is uncommitted /
   #      untracked beore proceeding?
   #
