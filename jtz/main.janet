@@ -20,6 +20,8 @@
   `jtz` should be invoked from the root directory of
   a Janet project.
 
+  Only one option should be specified per invocation.
+
   With the `-i` or `--install` option, install `jeat`
   into the project.
 
@@ -50,6 +52,12 @@
     (each err errs
       (eprint "jtz: " err))
     (eprint "Try 'jtz -h' for usage text.")
+    (os/exit 1))
+
+  # XXX: hacky, but way to avoid issues
+  (when (not (one? (length opts)))
+    (eprint "Detected more than one option in invocation, aborting")
+    (eprintf "Content of argv was: %n" argv)
     (os/exit 1))
 
   # usage
