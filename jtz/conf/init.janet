@@ -34,6 +34,11 @@
                      (string (dyn :jeat-test-dir-name) "/"
                              (dyn :jeat-runner-name))))
 
+  (setdyn :jeat-dev-path
+          (os/getenv "JEAT_DEV_PATH"
+                     (string (os/getenv "HOME" (os/getenv "USERPROFILE"))
+                             "/src/janet-ex-as-tests")))
+
   {:jeat-dir-name (dyn :jeat-dir-name)
    :jeat-repo (dyn :jeat-repo)
    :jeat-conf-name (dyn :jeat-conf-name)
@@ -41,4 +46,5 @@
    :jeat-test-dir-name (dyn :jeat-test-dir-name)
    :jeat-runner-name (dyn :jeat-runner-name)
    :jeat-runner-src-path (dyn :jeat-runner-src-path)
-   :jeat-runner-dest-path (dyn :jeat-runner-dest-path)})
+   :jeat-runner-dest-path (dyn :jeat-runner-dest-path)
+   :jeat-dev-path (dyn :jeat-dev-path)})

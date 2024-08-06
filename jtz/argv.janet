@@ -2,6 +2,7 @@
   {"--install" "-i"
    "--help" "-h"
    "--update" "-p"
+   "--symlink" "-s"
    "--uninstall" "-u"})
 
 (def shorts-table

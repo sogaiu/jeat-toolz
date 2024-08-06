@@ -1,6 +1,7 @@
 (import ./argv :as av)
 (import ./install :as inst)
 (import ./update :as upd)
+(import ./symlink :as sym)
 (import ./uninstall :as uninst)
 
 (def usage
@@ -13,6 +14,7 @@
 
     -i, --install                install jeat
     -p, --update                 update jeat
+    -s, --symlink                symlink jeat
     -u, --uninstall              uninstall jeat
 
   `jtz` should be invoked from the root directory of
@@ -23,6 +25,9 @@
 
   With the `-p` or `--update` option, update `jeat`
   in the project.
+
+  With the `-s` or `--symlink` option, use a symlinked
+  version of `jeat` in the project.
 
   With the `-u` or `--uninstall` option, uninstall `jeat`
   from the project.
@@ -59,6 +64,10 @@
 
   (when (opts :update)
     (upd/main @[])
+    (os/exit 0))
+
+  (when (opts :symlink)
+    (sym/main @[])
     (os/exit 0))
 
   (when (opts :uninstall)
