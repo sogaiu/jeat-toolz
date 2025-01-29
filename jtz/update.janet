@@ -8,10 +8,11 @@
 (defn main
   [& argv]
   (def force
-    (when (> (length argv) 1)
-      (when-let [argv-1 (get argv 1)]
-        (or (= "-f" argv-1)
-            (= "--force" argv-1)))))
+    (or (os/getenv "JTZ_FORCE")
+        (when (> (length argv) 1)
+          (when-let [argv-1 (get argv 1)]
+            (or (= "-f" argv-1)
+                (= "--force" argv-1))))))
 
   (def {:logf logf
         :dump-log dump-log
