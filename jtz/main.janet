@@ -59,7 +59,7 @@
     (os/exit 1))
 
   # XXX: hacky, but way to avoid issues
-  (when (not (one? (length opts)))
+  (when (> (length opts) 1)
     (eprint "Detected more than one option in invocation, aborting")
     (eprintf "Content of argv was: %n" argv)
     (os/exit 1))
