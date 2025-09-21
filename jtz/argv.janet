@@ -1,7 +1,6 @@
 (def arg-data
   {"--install" "-i"
    "--help" "-h"
-   "--jpm-test" "-j"
    "--update" "-p"
    "--symlink" "-s"
    "--uninstall" "-u"})

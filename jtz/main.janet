@@ -2,7 +2,6 @@
 (import ./install :as inst)
 (import ./update :as upd)
 (import ./symlink :as sym)
-(import ./jpm-test :as jt)
 (import ./uninstall :as uninst)
 
 (def usage
@@ -14,7 +13,6 @@
     -h, --help                   show this output
 
     -i, --install                install jeat
-    -j, --jpm-test               invoke `jpm test`
     -p, --update                 update jeat
     -s, --symlink                symlink jeat
     -u, --uninstall              uninstall jeat
@@ -26,8 +24,6 @@
 
   With the `-i` or `--install` option, install `jeat`
   into the project.
-
-  With the `-j` or `--jpm-test` option, invoke `jpm test`.
 
   With the `-p` or `--update` option, update `jeat`
   in the project.
@@ -80,10 +76,6 @@
 
   (when (opts :symlink)
     (sym/main @[])
-    (os/exit 0))
-
-  (when (opts :jpm-test)
-    (jt/main @[])
     (os/exit 0))
 
   (when (opts :uninstall)
